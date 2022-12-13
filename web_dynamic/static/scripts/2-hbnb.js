@@ -11,3 +11,10 @@ $("input[type='checkbox']").change(function() {
     }
     $('.amenities h4').text(checked.join(', '));
   });
+  $.get('http://d969ef231c02.cd567695.hbtn-cod.io:5001/api/v1/status/', function(data) {
+    if (data.status === 'OK') {
+      $('#api_status').addClass('available');
+    } else {
+      $('#api_status').removeClass('available');
+    }
+  });
